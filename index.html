@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO POUR GOOGLE -->
+    <title>Barja & Co | Home Design & Décoration Intérieure Luxe</title>
+    <meta name="description" content="Barja & Co, votre expert en Home Design et décoration d'intérieur luxe au Maroc. Services disponibles 24h/24 et 7j/7. Contactez-nous au 0780017728.">
+    <meta name="keywords" content="Barja & Co, Home Design, décoration intérieur, design luxe, Maroc, rénovation, architecte intérieur">
+    
+    <!-- POLICES -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --champagne-bg: #FFFDF5;
+            --champagne-soft: #F7E7CE;
+            --gold-main: #D4AF37;
+            --gold-shine: #F9DF74;
+            --gold-dark: #8A6E24;
+            --text-main: #3E3B32;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--champagne-bg);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 { font-family: 'Playfair Display', serif; color: var(--gold-dark); }
+
+        /* Navigation */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 20px 5%;
+            display: flex; justify-content: space-between; align-items: center;
+            z-index: 999; transition: background 0.4s;
+        }
+
+        .nav-scrolled {
+            background: rgba(255, 253, 245, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(212, 175, 55, 0.15);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700;
+            background: linear-gradient(45deg, var(--gold-main), var(--gold-dark));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links a {
+            color: var(--gold-dark); text-decoration: none; margin-left: 30px;
+            font-weight: 600; font-size: 0.9rem; text-transform: uppercase;
+            letter-spacing: 1px; transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--gold-main); }
+
+        /* Hero */
+        .hero {
+            height: 100vh; display: flex; align-items: center; justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, #fffdf5 0%, #f7e7ce 100%);
+        }
+        .hero::before {
+            content: ''; position: absolute; top: -100px; right: -100px;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, rgba(255,255,255,0) 70%);
+            border-radius: 50%; z-index: 0;
+        }
+        .hero-content { text-align: center; z-index: 1; padding: 0 20px; }
+        .hero h1 {
+            font-size: 4.5rem; line-height: 1.2; margin-bottom: 20px;
+            background: linear-gradient(to right, var(--gold-dark), var(--gold-main), var(--gold-shine));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .hero p { font-size: 1.2rem; color: #7A7567; margin-bottom: 40px; letter-spacing: 2px; text-transform: uppercase; }
+        
+        .btn-luxury {
+            display: inline-block; padding: 18px 50px;
+            background: linear-gradient(45deg, var(--gold-main), var(--gold-dark));
+            color: white; text-decoration: none; font-weight: 600;
+            letter-spacing: 1px; border-radius: 50px;
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .btn-luxury:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(212, 175, 55, 0.5); }
+
+        /* About */
+        .about-section { padding: 100px 5%; background-color: white; display: flex; align-items: center; gap: 50px; flex-wrap: wrap; }
+        .about-text { flex: 1; min-width: 300px; }
+        .section-title { font-size: 2.8rem; margin-bottom: 30px; position: relative; }
+        .section-title::after { content: ''; display: block; width: 80px; height: 3px; background: var(--gold-main); margin-top: 15px; }
+        .about-text p { font-size: 1.1rem; line-height: 1.8; color: #666; margin-bottom: 20px; }
+        .about-image {
+            flex: 1; min-width: 300px; height: 500px;
+            background: url('https://images.unsplash.com/photo-1618219908412-a29a1bb7b86e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80');
+            background-size: cover; background-position: center; border-radius: 20px;
+            box-shadow: 30px 30px 0px var(--champagne-soft);
+        }
+
+        /* Services */
+        .services-section { padding: 100px 5%; background-color: var(--champagne-bg); text-align: center; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 50px; }
+        .service-card {
+            background: white; padding: 40px 30px; border-radius: 15px;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            transition: all 0.4s ease; position: relative; overflow: hidden;
+        }
+        .service-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(138, 110, 36, 0.1); border-color: var(--gold-main); }
+        .service-icon { font-size: 2.5rem; color: var(--gold-main); margin-bottom: 20px; }
+        .service-card h3 { font-size: 1.5rem; margin-bottom: 15px; }
+        .service-card p { color: #666; }
+
+        /* Contact */
+        .contact-section { padding: 100px 5%; background: linear-gradient(135deg, var(--champagne-soft) 0%, white 100%); display: flex; flex-wrap: wrap; gap: 50px; align-items: center; }
+        .contact-info-container { flex: 1; min-width: 300px; }
+        .contact-box { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.05); border-left: 5px solid var(--gold-main); }
+        .contact-item { display: flex; align-items: center; margin-bottom: 25px; gap: 20px; }
+        .contact-icon { width: 50px; height: 50px; background: var(--champagne-soft); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--gold-dark); font-size: 1.2rem; }
+        .contact-text h4 { font-family: 'Playfair Display', serif; color: var(--gold-dark); margin-bottom: 5px; }
+        .contact-text a, .contact-text p { color: #555; text-decoration: none; font-size: 1.1rem; }
+        .tag-24h { display: inline-block; background: var(--gold-main); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.8rem; margin-top: 5px; }
+
+        .contact-form-container { flex: 1; min-width: 300px; }
+        .form-style { background: white; padding: 50px; border-radius: 20px; box-shadow: 0 15px 50px rgba(0,0,0,0.05); }
+        .input-group { margin-bottom: 20px; }
+        .input-group input, .input-group textarea { width: 100%; padding: 15px; border: 2px solid #eee; border-radius: 10px; font-family: 'Montserrat', sans-serif; transition: border-color 0.3s; background: var(--champagne-bg); }
+        .input-group input:focus, .input-group textarea:focus { border-color: var(--gold-main); outline: none; }
+
+        footer { background-color: var(--gold-dark); color: rgba(255,255,255,0.8); text-align: center; padding: 30px; font-size: 0.9rem; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.8rem; }
+            .nav-links { display: none; }
+            .about-image { height: 300px; }
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <nav id="navbar">
+        <div class="logo">Barja & Co</div>
+        <div class="nav-links">
+            <a href="#home">Home</a>
+            <a href="#about">À Propos</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <p>Bienvenue chez</p>
+            <h1>Barja & Co</h1>
+            <p style="text-transform: none; font-size: 1.5rem; margin-bottom: 40px;">Home Design & Luxe Intérieur</p>
+            <a href="#contact" class="btn-luxury">Demander un Devis</a>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-text">
+            <h2 class="section-title">L'Art du Design</h2>
+            <p>Nous transformons vos espaces en créant des intérieurs qui reflètent votre personnalité. Notre équipe d'experts allie fonctionnalité et esthétique pour donner vie à vos rêves.</p>
+            <p>De la conception à la réalisation, nous vous accompagnons avec passion et expertise.</p>
+        </div>
+        <div class="about-image"></div>
+    </section>
+
+    <section id="services" class="services-section">
+        <h2 class="section-title">Nos Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-pencil-ruler"></i></div>
+                <h3>Design d'Intérieur</h3>
+                <p>Création d'ambiances uniques, choix des matériaux et agencement spatial optimisé.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-couch"></i></div>
+                <h3>Décoration</h3>
+                <p>Sélection de mobilier, rideaux, et accessoires pour une harmonie parfaite.</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon"><i class="fas fa-hard-hat"></i></div>
+                <h3>Rénovation</h3>
+                <p>Modernisation complète de vos espaces de vie avec des finitions haut de gamme.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-info-container">
+            <h2 class="section-title">Contactez-Nous</h2>
+            <div class="contact-box">
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+                    <div class="contact-text">
+                        <h4>Téléphone</h4>
+                        <a href="tel:0780017728">07 80 01 77 28</a>
+                        <div class="tag-24h">Disponible 24h/24 - 7j/7</div>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div class="contact-text">
+                        <h4>Email</h4>
+                        <a href="mailto:barjaandco@gmail.com">barjaandco@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="contact-text">
+                        <h4>Localisation</h4>
+                        <p>Maroc</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form-container">
+            <form class="form-style" action="mailto:barjaandco@gmail.com" method="post" enctype="text/plain">
+                <div class="input-group">
+                    <input type="text" name="nom" placeholder="Votre Nom" required>
+                </div>
+                <div class="input-group">
+                    <input type="email" name="email" placeholder="Votre Email" required>
+                </div>
+                <div class="input-group">
+                    <textarea name="message" rows="5" placeholder="Décrivez votre projet..." required></textarea>
+                </div>
+                <button type="submit" class="btn-luxury" style="width: 100%; border: none; cursor: pointer;">Envoyer</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2023 Barja & Co. Tous droits réservés.
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('navbar');
+            if(window.scrollY > 50) { nav.classList.add('nav-scrolled'); } 
+            else { nav.classList.remove('nav-scrolled'); }
+        });
+    </script>
+</body>
+</html>
+```
