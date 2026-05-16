@@ -1,4 +1,3 @@
-# Barja-co.ma
 ```html
 <!DOCTYPE html>
 <html lang="fr">
